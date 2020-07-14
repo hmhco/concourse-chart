@@ -3,9 +3,9 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: {{ template "concourse.web.fullname" . }}-{{ .ambassador_id }}-k8s
+  name: {{ template "concourse.web.fullname" $ }}-{{ .ambassador_id }}-k8s
 spec:
   ambassador_id: {{ .ambassador_id }}
   prefix: {{ .prefix }}
-  service: {{ template "concourse.web.fullname" . }}:8080
+  service: {{ template "concourse.web.fullname" $ }}:8080
 {{- end }}
