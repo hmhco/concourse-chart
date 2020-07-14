@@ -3,11 +3,11 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: {{ template "concourse.web.fullname" . }}-{{ .ambassador_id }}-consul
+  name: {{ template "concourse.web.fullname" $ }}-{{ .ambassador_id }}-consul
 spec:
   ambassador_id: {{ .ambassador_id }}
   prefix: {{ .prefix }}
-  service: {{ template "concourse.web.fullname" . }}-sidecar-proxy
+  service: {{ template "concourse.web.fullname" $ }}-sidecar-proxy
   resolver: consul-connect-{{ .ambassador_id }}
   tls: ambassador-consul-{{ .ambassador_id }}
   load_balancer:
