@@ -31,7 +31,7 @@ spec:
   {{- end }}
   ports:
   - name: atc
-    port: {{ .Values.concourse.web.bindPort }}
+    port: 443
     targetPort: atc
     {{- if and (eq "NodePort" .Values.web.service.api.type) .Values.web.service.api.atcNodePort }}
     nodePort: {{ .Values.web.service.api.NodePort}}
